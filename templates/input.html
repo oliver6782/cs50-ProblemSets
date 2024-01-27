@@ -1,0 +1,22 @@
+{% extends layout.html %}
+
+{% block title%}
+    Basic information
+{% endblock %}
+
+{% block main %}
+    <form action="/input" method="post">
+        <div>
+            <select name="Province" id="province" disabled="disabled" type="TEXT">
+                <option value=""> <!--TODO--> </option>
+            </select>
+        </div>
+        <div>
+            <select name="City" id="city" disabled="disabled" type="TEXT">
+                <option value=""> <!--TODO--> </option>
+            </select>
+        </div>
+        <div><input name="capacity" placeholder="MW" type="number" min="0"></div>
+
+    </form>
+{% endblock %}
