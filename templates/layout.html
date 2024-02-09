@@ -2,15 +2,28 @@
 
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            LONGI CENTER SOLAR: {% block title %}{% endblock %}
+             LONGI: {% block title %} {% endblock %}
         </title>
+        <link rel="stylesheet" href="static/styles.css">
+        <nav>
+            <a href="/"><img src="static/logo.svg" alt="LONGi Solar" class="nav-icon" data-v-67d0a6ff></a>
+        </nav>
     </head>
     <body>
-        <nav></nav>
+        
+        {% if get_flashed_messages() %}
+        <header>
+            <div class="text-center">
+                {{get_flashed_messages() | join(" ")}}
+            </div>
+        </header>
+        {% endif %}
         <main>
-            {% bolck main %}{% endblock %}
+            {% block main %} {% endblock %}
         </main>
-        <footer></footer>
+        
     </body>
 </html>

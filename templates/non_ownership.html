@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title%}
+    Non_Ownership
+{% endblock %}
+
+{% block main %}
+    <form action="/non_ownership" method="post">
+        <div class="input-block">
+            <label for="province">Province: </label>
+            <select name="province" id="province" type="TEXT" onchange="get_cities()">
+                <option value="选择省份" disabled selected>select province</option>
+                {% for province in provinces %}
+                <option value="{{province['province']}}"> {{province['province']}} </option>
+                {% endfor %}
+            </select>
+
+            <label for="city">City: </label>
+            <select name="city" id="city" type="TEXT"></select>
+            
+        
+            <label for="capacity">Installed Capacity:</label>
+            <div class="input-with-unit">
+                <input name="capacity" id="capacity" type="number" min="0" step="0.001"><span class="unit-mark">MW</span>
+            </div>
+            
+            <label for="运行年限">Operating Years: </label>
+            <select name="运行年限" id="运行年限" >
+                {% for i in range(25,5,-1) %}
+                <option value="{{i}}">{{ i }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="input-block">
+            <lable for="EPC单价">EPC Price: </lable>
+            <div class="input-with-unit"><input type="number" min="0" max="5" step="0.001" name="EPC单价" id="EPC单价"><span class="unit-mark">Yuan/W</span></div>
+            
+            <label for="运维费用">Maint.Rate: </label>
+            <div class="input-with-unit"><input type="number" min="0" max="5" step="0.001" name="运维费用" id="运维费用" placeholder="0.05"><span class="unit-mark">Yuan/W/Year</span></div>
+            
+            <lable for="消纳比">Consumption Ratio: </lable>
+            <div class="input-with-unit"><input type="number" min="0" max="100" step="0.01" name="消纳比" id="消纳比"><span class="unit-mark">%</span></div>
+            
+            <lable for="收益率">Required IRR: </lable>
+            <div class="input-with-unit"><input type="number" min="0" max="100" step="0.01" name="收益率" id="收益率"><span class="unit-mark">%</span></div>
+        </div>
+
+        <h2>Basic Parameters</h2>
+
+        <div class="input-block">
+            <label for="首年衰减">1stY Degradation: </label>
+            <div class="input-with-unit"><input type="number" min="0" max="1" step="0.001" name="首年衰减" id="首年衰减" placeholder="1.5"><span class="unit-mark">%</span></div>
+            
+            <label for="线性衰减">Linear Degradation: </label>
+            <div class="input-with-unit"><input type="number" min="0" max="1" step="0.001" name="线性衰减" id="线性衰减" placeholder="0.4"><span class="unit-mark">%</span></div>
+        </div>
+      
+
+        <div><button type="submit">Generate Plan</button></div>
+
+    </form>
+
+    <script src="{{ url_for('static', filename='javascript.js') }}"></script>
+
+{% endblock %}

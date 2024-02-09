@@ -1,11 +1,17 @@
-{% extends layout.html %}
+{% extends "layout.html" %}
 
 {% block title %}
-    Your plan
+    Homepage
 {% endblock %}
 
 {% block main %}
-    <!--display the outlook and the IRR of the solar station-->
-    <!--if no plan, print "you don't have a plan" and a button "start plan"-->
-    <!--if current plan, button "modify plan"-->
+<br>
+<h1>Select business model for your solar station</h1>
+
+<a href="/ownership"><button type="button">Ownership</button></a>
+<a href="/non_ownership"><button type="button">Non-ownership</button></a>
+    
+
+    
 {% endblock %}
+

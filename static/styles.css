@@ -1,0 +1,86 @@
+body {
+    text-align: center;
+}
+
+nav {
+    background-color: #7d7d7d;
+    padding: 10px 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+
+header {
+    background-color: #f45d5d;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+
+select {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+div {
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #7d7d7d;
+    color: #fff;
+
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.input-block {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    display: inline-block;
+    width: 200px;
+
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style for input fields */
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+.unit-mark {
+    font-size: 14px;
+    color: #bbb9b9;
+}
+
+.input-with-unit {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Investment Plan
+{% endblock %}
+
+{% block main %}
+    {% if page_name == "error" %}
+        <h2>NOT APPLICABLE</h2>
+    {% endif %}
+
+    {% if page_name == "ownership" %}
+        <h2>Internal Rate of Return(IRR) of your investment = {{internal_return | percentage}}</h2>
+    {% endif %}
+
+    {% if page_name == "non_ownership" %}
+        <h2>Unit Price that solar leasing can offer = {{ unit_price | rmb}}</h2>
+    {% endif %}
+    
+{% endblock %}
